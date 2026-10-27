@@ -1,0 +1,81 @@
+version: v0.4
+project:
+  name: "The Number of Polytope Trees and Beyond — Lean 4 formalization"
+  description: >-
+    Symmetry-weighted enumeration of finite facet-pairing diagrams and polytope
+    trees: cut-join recurrences, factorial formulas, formal exponential
+    generating functions, local analytic counting series with specified radical
+    branches, binomial identities and asymptotic equivalents. The development
+    also proves unique extension of intrinsic facet isometries for finite
+    spanning flag-regular Euclidean cells, derives their geometric presentation
+    masses, and proves an exponential lower bound for ordinary simplicial
+    triangulation classes from any fixed finite pure triangulation of dimension
+    at least two.
+  authors: [Ali Aliev]
+  responsible_maintainers: [Ali Aliev]
+  license: MIT
+classification:
+  arxiv: [math.CO, math.GT]
+  msc2020: [05A15, 05A19, 05C30, 57Q15, 20B25, 05E45]
+sources:
+  - title: "The Number of Polytope Trees and Beyond"
+    authors: [Ali Aliev, Natalia Amburg]
+    id: "https://arxiv.org/abs/2610.33344v1"
+    type: article
+    location: "Sections 2–7 and Appendices A–E; see the numbered correspondence table in README.md."
+    relationship: adapts
+    note: >-
+      arXiv:2610.33344v1 [math.CO], submitted 23 October 2026.
+      DOI: 10.48550/arXiv.2610.33344. Numbering and source correspondence refer
+      to v1. The formalization uses alternative proofs and explicit finite
+      models; its exact scope and parameter restrictions are documented in
+      README.md. The article is not distributed with the code. Project
+      authorship describes the formalization; this source entry credits both
+      authors of the paper.
+automation:
+  methods:
+    - method: agent
+      models: [OpenAI ChatGPT]
+      framework: ChatGPT
+      tool_setup: >-
+        AI-assisted mathematical modeling, Lean proof development, proof repair
+        and documentation under human direction, using Lean and Mathlib.
+  notes: >-
+    AI assistance was material. Exact model identifiers for all development
+    stages are not available. The human author and maintainer retain
+    responsibility for the mathematical scope.
+fidelity:
+  divergences: >-
+    The concrete objects are symmetry-weighted finite facet pairings. Circuit
+    rank belongs to the dual graph. Affine geometric presentation masses are
+    connected to these counts. Palettes are constructed for every simplex of
+    dimension at least two. A general signed-group and regular-flag interface
+    derives palettes and the relation tau = h*r. Actual Euclidean symmetry
+    groups, supporting faces and intrinsic facet restriction are constructed
+    from finite spanning flag-regular vertex sets in dimension at least two.
+    Unique extension, determinant compatibility, negative stabilizers, all-facet
+    intrinsic palettes, tau = h*r, presentation masses and affine quotient
+    compatibility are proved without supplying a palette or extension hypothesis.
+    A separate concrete stellar-subdivision family proves preservation of
+    homeomorphism type and Corollary 5.3 for finite pure triangulations of
+    dimension at least two, using ordinary classes and a polynomial unmarking
+    bound. The lower bound is 2^(n-1)/(v+n)^v. Appendix D includes parity,
+    endpoints and equality cases. Cardano and Ferrari radicals use branches
+    fixed at the origin. All analytic identifications are local there.
+review:
+  status: unchecked
+  notes: >-
+    No independent human mathematical review or Palomar registration is claimed.
+    All original and intrinsic proof modules are included in Article and the
+    transitive axiom audit. Current results are recorded in verification.json.
+    The separate Challenge specifies 39 enumerative, analytic, asymptotic,
+    ordinary-triangulation and geometric-extension claims. Its imports are
+    exclusively from Mathlib and it has no definition holes. Local comparison
+    of exported statements and kernel checks, and any environment limitations,
+    are recorded separately from external review in verification.json.
+
+alignment:
+  namespace: PolytopeTrees
+  entry_point: Article
+  statement_specification: Challenge
+  comparator: comparator.json

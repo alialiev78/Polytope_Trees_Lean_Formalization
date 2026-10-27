@@ -1,0 +1,114 @@
+{
+  "date": "2026-10-09",
+  "lean_toolchain": "leanprover/lean4:v4.35.0-rc2",
+  "lean_commit": "11acb17ec6b07a8f9e9173e6845197929540936b",
+  "mathlib_commit": "065356127b1dc0016f66b7283ce0ce2c4055aa55",
+  "proof_modules": 184,
+  "lean_files": 189,
+  "lean_physical_lines": 42983,
+  "article_local_modules": 187,
+  "all_proof_modules_imported_by_Article": true,
+  "challenge_not_imported": true,
+  "source_sha256": "196154389221279fc985bff184b77aca1d1a0c1e27a7ba207741232bab7c1c94",
+  "source_hash_convention": "SHA256 of sorted relative UTF-8 paths, NUL, exact bytes, NUL; all Lean files plus lean-toolchain, lakefile.toml, lake-manifest.json, comparator.json and both verification shell scripts.",
+  "build": {
+    "command": "lake build",
+    "result": "passed",
+    "mode": "Clean project build; only pinned external dependency artifacts were retained.",
+    "jobs": 3982
+  },
+  "axiom_audit": {
+    "command": "lake env lean Audit.lean",
+    "result": "passed",
+    "declarations": 5286,
+    "geometric_declarations": 416,
+    "permitted_axioms": [
+      "propext",
+      "Quot.sound",
+      "Classical.choice"
+    ]
+  },
+  "kernel_replay": {
+    "command": "lake env bash scripts/check_kernel.sh",
+    "result": "passed",
+    "modules": 187,
+    "log_sha256": "f0ad6978cbf20bcd5eb830a59cbf458ca8b659f572ca74328bc741376aa09b05",
+    "scope": "Sequential Lean-kernel replay of every project proof module against the pinned imports."
+  },
+  "statement_comparison": {
+    "result": "passed",
+    "theorem_targets": 39,
+    "definition_holes": 0,
+    "method": "The pinned toolchain functions Lake.Check.compareAt and Lake.Check.checkAxioms applied to independent leanexport NDJSON files, with the exact primitive targets used by lake comparator.",
+    "scope": "Exact theorem types, the transitive definitions and permitted axiom dependencies; no project olean is loaded into this comparison process."
+  },
+  "export_kernel_checks": {
+    "lean": {
+      "result": "passed",
+      "exit_code": 0,
+      "command": "leanchecker --silent --from-export solution.ndjson"
+    },
+    "nanoda": {
+      "result": "passed",
+      "exit_code": 0,
+      "checker": "nanoda_bin bundled with the pinned Lean release",
+      "configuration": {
+        "num_threads": 4,
+        "nat_extension": true,
+        "string_extension": true,
+        "permitted_axioms": [
+          "propext",
+          "Quot.sound",
+          "Classical.choice"
+        ]
+      }
+    },
+    "scope": "The complete exported proof dependency closure of the 39 selected statements, including imported dependencies.",
+    "challenge_export_sha256": "c3043cacdb0e1d44fd912f369561ab8850aeb73176392990338c80e299893de2",
+    "solution_export_sha256": "96345498714f183f03d7dfbddcc25317ecfe5f51ba62b493bd5901ed17ce3246"
+  },
+  "sandboxed_comparator": {
+    "result": "not_completed_in_this_environment",
+    "reason": "Nested bubblewrap namespaces are denied: Creating new namespace failed: Operation not permitted.",
+    "sandbox_disabled": false,
+    "reproducible_command": "bash scripts/run_comparator.sh",
+    "github_workflow": ".github/workflows/comparator.yml",
+    "scope": "The comparison and both kernel checks above are local component checks, not a successful isolated lake comparator run or a Palomar verdict."
+  },
+  "publication_layout": {
+    "module_headers": "all Lean sources",
+    "maximum_lean_file_lines": 1441,
+    "challenge_lines": 989,
+    "challenge_bytes": 42555,
+    "challenge_imports": "Mathlib only",
+    "challenge_readability_warning": "Above the advisory 300-line / 32-KiB limits, below the mandatory 1000-line / 100-KiB limits.",
+    "toolchain_matches_mathlib": true,
+    "dependency_commits_pinned": true,
+    "compiled_artifacts_in_archive": false
+  },
+  "review": {
+    "human_review": "not claimed",
+    "palomar_registration": "not performed",
+    "bibliography": "Ali Aliev and Natalia Amburg, The Number of Polytope Trees and Beyond, arXiv:2610.33344v1 (23 October 2026)."
+  },
+  "environment_note": "This host uses an external launcher to initialize the pinned Lean sysroot; the release kernel and elaborator libraries are unchanged. The launcher and local diagnostic tools are not part of this source archive.",
+  "source_article": {
+    "title": "The Number of Polytope Trees and Beyond",
+    "authors": [
+      "Ali Aliev",
+      "Natalia Amburg"
+    ],
+    "arxiv_id": "2610.33344",
+    "version": "v1",
+    "url": "https://arxiv.org/abs/2610.33344v1",
+    "doi": "10.48550/arXiv.2610.33344",
+    "submitted_date": "2026-10-23"
+  },
+  "documentation_update": {
+    "date": "2026-10-27",
+    "scope": "README, formalization metadata, preferred paper citation and bibliographic fields in this record.",
+    "paper_numbering": "arXiv:2610.33344v1",
+    "proof_sources_and_build_configuration": "Byte-identical to the verified 2026-10-09 source snapshot; the recorded source SHA256 was recomputed and matched.",
+    "new_proof_checks_run": false
+  }
+}

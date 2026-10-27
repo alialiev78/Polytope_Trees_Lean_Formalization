@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "Please cite the article below when referring to the mathematical results formalized by this project."
+type: software
+title: "The Number of Polytope Trees and Beyond — Lean 4 formalization"
+authors:
+  - family-names: Aliev
+    given-names: Ali
+license: MIT
+preferred-citation:
+  type: article
+  title: "The Number of Polytope Trees and Beyond"
+  authors:
+    - family-names: Aliev
+      given-names: Ali
+    - family-names: Amburg
+      given-names: Natalia
+  year: 2026
+  date-published: "2026-10-23"
+  doi: "10.48550/arXiv.2610.33344"
+  url: "https://arxiv.org/abs/2610.33344v1"
+  notes: "arXiv:2610.33344v1 [math.CO]. Source numbering in the formalization refers to this version."

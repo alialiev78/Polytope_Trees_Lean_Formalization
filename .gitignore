@@ -1,0 +1,12 @@
+.lake/
+.lake-*
+__pycache__/
+*.pyc
+*.olean
+*.olean.*
+*.ilean
+*.ir
+*.ir.sig
+*.trace
+*.log
+.DS_Store

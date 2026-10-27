@@ -1,0 +1,36 @@
+name: Comparator and NanoDa
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+env:
+  LEAN_NUM_THREADS: "2"
+jobs:
+  comparator:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install sandbox dependency
+        run: sudo apt-get update -qq && sudo apt-get install -y bubblewrap
+      - name: Build pinned Lean project
+        uses: leanprover/lean-action@v1
+        with:
+          auto-config: "false"
+          build: "true"
+          test: "false"
+          lint: "false"
+          use-mathlib-cache: "true"
+      - name: Compare statements and check exported proofs in both kernels
+        shell: bash
+        run: |
+          set -o pipefail
+          mkdir -p .lake/verification
+          bash scripts/run_comparator.sh 2>&1 | tee .lake/verification/comparator.log
+      - name: Preserve the verification log
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: comparator-log
+          path: .lake/verification/comparator.log
+          if-no-files-found: ignore

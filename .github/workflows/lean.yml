@@ -1,0 +1,26 @@
+name: Lean
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+env:
+  LEAN_NUM_THREADS: "2"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+      - uses: leanprover/lean-action@v1
+        with:
+          auto-config: "false"
+          build: "true"
+          test: "false"
+          lint: "false"
+          use-mathlib-cache: "true"
+      - name: Audit axiom dependencies
+        run: lake env lean Audit.lean
+      - name: Replay project declarations through the Lean kernel
+        run: lake env bash scripts/check_kernel.sh

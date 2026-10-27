@@ -1,0 +1,17 @@
+module
+
+public import Solution
+public import MainText
+public import Proofs.ArticleStatements
+public import Proofs.ConcreteGlobalCutJoin
+public import Proofs.HtwoExplicitFormulas
+public import Proofs.IntrinsicExponentialLowerBound
+public import Proofs.LocalTriangleSubdivision
+public import Proofs.GeneralSimplexStellarSubdivision
+public import Proofs.UnmarkingBound
+public import Proofs.RegularPolytopeMass
+public import Proofs.SimplexUniformPalette
+public import Proofs.ExposedFacetRigidity
+public import Proofs.IntrinsicGeometricPresentations
+public import Proofs.PublicationGeometry
+public import Proofs.PublicationAsymptotic
